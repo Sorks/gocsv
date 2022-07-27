@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func Unmarshal(data []byte, v any) error {
+func Unmarshal(data []byte, v interface{}) error {
 	reflectT := reflect.TypeOf(v).Elem().Elem()
 	reflectV := reflect.ValueOf(v).Elem()
 	structsLen := reflectT.NumField()
